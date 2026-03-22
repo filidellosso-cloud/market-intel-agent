@@ -11,7 +11,6 @@
   body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;min-height:100vh;}
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
   .wrap{max-width:1100px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
-  /* KEY SCREEN */
   .key-screen{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;}
   .key-box{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;width:100%;text-align:center;}
   .key-box .ico{font-size:40px;margin-bottom:16px;}
@@ -27,7 +26,6 @@
   .key-note{font-size:11px;color:var(--dim);font-family:'Space Mono',monospace;}
   .key-note a{color:var(--accent);text-decoration:none;}
   .key-err{color:var(--red);font-size:12px;margin-bottom:10px;font-family:'Space Mono',monospace;display:none;}
-  /* HEADER */
   .header{padding:24px 0 18px;border-bottom:1px solid var(--border);margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
   .logo{display:flex;align-items:center;gap:10px;}
   .logo-icon{width:36px;height:36px;background:var(--accent);border-radius:8px;display:grid;place-items:center;font-size:17px;}
@@ -40,19 +38,17 @@
   .icon-btn{padding:5px 11px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--dim);font-family:'Space Mono',monospace;font-size:11px;cursor:pointer;transition:all .2s;}
   .icon-btn:hover{border-color:var(--red);color:var(--red);}
   .icon-btn.on{border-color:var(--accent);color:var(--accent);background:rgba(0,255,136,.08);}
-  /* TABS */
+  .groq-badge{padding:4px 10px;background:rgba(123,97,255,.1);border:1px solid rgba(123,97,255,.3);border-radius:6px;font-family:'Space Mono',monospace;font-size:10px;color:var(--accent3);}
   .tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:18px;}
   .tab{padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;color:var(--dim);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none;font-family:'Syne',sans-serif;}
   .tab.active{color:var(--accent);border-bottom-color:var(--accent);}
   .panel{display:none;}.panel.active{display:block;}
   .badge{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:var(--accent);color:var(--bg);font-size:10px;font-weight:700;margin-left:5px;font-family:'Space Mono',monospace;}
-  /* PILLS */
   .row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
   .pill{padding:5px 12px;border-radius:100px;border:1px solid var(--border);background:var(--surface);color:var(--dim);font-family:'Space Mono',monospace;font-size:10px;cursor:pointer;transition:all .2s;text-transform:uppercase;}
   .pill:hover{border-color:var(--accent);color:var(--accent);}
   .pill.active{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700;}
   .pill.src.active{background:rgba(123,97,255,.15);color:var(--accent3);border-color:var(--accent3);}
-  /* CONTROLS */
   .controls{display:grid;grid-template-columns:1fr auto auto auto;gap:10px;margin-bottom:14px;align-items:end;}
   .cg{display:flex;flex-direction:column;gap:5px;}
   label{font-size:10px;font-family:'Space Mono',monospace;color:var(--dim);text-transform:uppercase;letter-spacing:1px;}
@@ -65,17 +61,14 @@
   .btn-fj{padding:11px 14px;background:var(--surface2);color:var(--accent2);border:1px solid var(--accent2);border-radius:8px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
   .btn-fj:hover{background:var(--accent2);color:var(--bg);}
   .btn-fj:disabled{opacity:.45;cursor:not-allowed;}
-  /* REFRESH */
   .refresh-info{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding:9px 15px;background:var(--surface2);border-radius:8px;border:1px solid var(--border);}
   .spin{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--accent);animation:spin 1s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg)}}
-  /* LOADING */
   .lbar{height:2px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:12px;display:none;}
   .lbar.active{display:block;}
   .lfill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent3));animation:load 1.8s ease-in-out infinite;}
   @keyframes load{0%{width:0%;margin-left:0}50%{width:70%;margin-left:15%}100%{width:0%;margin-left:100%}}
   .smsg{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:10px;min-height:15px;}
-  /* CARDS */
   .summary-box{background:var(--surface2);border:1px solid var(--accent);border-radius:10px;padding:16px 20px;margin-bottom:16px;display:none;}
   .summary-box.visible{display:block;}
   .summary-box h3{font-size:10px;font-family:'Space Mono',monospace;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;}
@@ -134,18 +127,18 @@
 <!-- KEY SCREEN -->
 <div class="key-screen" id="keyScreen">
   <div class="key-box">
-    <div class="ico">🔑</div>
+    <div class="ico">⚡</div>
     <h2>Market <span>Intel</span> Agent</h2>
-    <p>Inserisci la tua API key di Anthropic per iniziare.<br>
+    <p>Inserisci la tua API key <strong>Groq</strong> gratuita per iniziare.<br>
     Viene salvata <strong>solo nel tuo browser</strong>, mai nel codice.<br><br>
-    Non hai una key? <a href="https://console.anthropic.com/settings/keys" target="_blank">Creala qui →</a></p>
+    Non hai una key? <a href="https://console.groq.com/keys" target="_blank">Creala gratis su Groq →</a></p>
     <div class="key-err" id="keyErr"></div>
     <div class="key-input-wrap">
-      <input type="password" id="keyInput" placeholder="sk-ant-api03-..." onkeydown="if(event.key==='Enter')saveKey()">
+      <input type="password" id="keyInput" placeholder="gsk_..." onkeydown="if(event.key==='Enter')saveKey()">
       <button class="key-toggle" onclick="toggleKeyVis()" type="button">👁</button>
     </div>
     <button class="key-btn" onclick="saveKey()" type="button">Inizia →</button>
-    <div class="key-note">Salvata solo in localStorage del tuo browser</div>
+    <div class="key-note">Salvata solo in localStorage del tuo browser · <a href="https://console.groq.com/keys" target="_blank">console.groq.com</a></div>
   </div>
 </div>
 
@@ -157,6 +150,7 @@
       <h1>Market <span>Intel</span> Agent</h1>
     </div>
     <div class="hright">
+      <span class="groq-badge">⚡ Groq Free</span>
       <button class="icon-btn" onclick="changeKey()" type="button">🔑 Cambia Key</button>
       <button class="icon-btn" id="notifBtn" onclick="toggleNotif()" type="button">🔔 OFF</button>
       <div class="status"><div class="dot"></div><span id="lastUpdate">In attesa</span></div>
@@ -169,7 +163,7 @@
     <button class="tab" onclick="switchTab('fav',this)" type="button">⭐ Preferiti <span class="badge" id="favCount">0</span></button>
   </div>
 
-  <!-- NEWS PANEL -->
+  <!-- NEWS -->
   <div class="panel active" id="newsPanel">
     <div class="row">
       <button class="pill src active" data-src="all" onclick="setSrc(this)" type="button">🌐 Tutte</button>
@@ -223,7 +217,7 @@
     </div>
   </div>
 
-  <!-- FJ PANEL -->
+  <!-- FJ -->
   <div class="panel" id="fjPanel">
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
       <button class="btn" id="fjRefBtn" onclick="fetchFJ(true)" type="button" style="font-size:13px;padding:9px 18px">⚡ Aggiorna FinancialJuice</button>
@@ -238,7 +232,7 @@
     <div id="fjGrid"><div class="empty"><div class="ico">📰</div><p>Premi <strong>Aggiorna</strong> per caricare.</p></div></div>
   </div>
 
-  <!-- FAV PANEL -->
+  <!-- FAV -->
   <div class="panel" id="favPanel">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:10px">
       <span style="font-size:14px;color:var(--dim)">Le tue notizie salvate</span>
@@ -259,20 +253,22 @@
 <script>
 var API_KEY='',allNews=[],activeFilter='all',activeSrc='all';
 var favorites=[],notifOn=false,cdTimer=null,cdSeconds=0,cdTotal=0;
+var GROQ_URL='https://api.groq.com/openai/v1/chat/completions';
+var GROQ_MODEL='llama-3.3-70b-versatile';
 
 try{favorites=JSON.parse(localStorage.getItem('mia_fav')||'[]');}catch(e){}
-var sk=localStorage.getItem('mia_api_key');
-if(sk&&sk.length>20){API_KEY=sk;showApp();}
+var sk=localStorage.getItem('mia_groq_key');
+if(sk&&sk.length>10){API_KEY=sk;showApp();}
 updateFavCount();renderFavs();
 
 function saveKey(){
   var v=document.getElementById('keyInput').value.trim();
-  if(v.length<20){
-    document.getElementById('keyErr').textContent='Inserisci una key valida (sk-ant-...)';
+  if(v.length<10){
+    document.getElementById('keyErr').textContent='Inserisci una key Groq valida (gsk_...)';
     document.getElementById('keyErr').style.display='block';return;
   }
   API_KEY=v;
-  try{localStorage.setItem('mia_api_key',v);}catch(e){}
+  try{localStorage.setItem('mia_groq_key',v);}catch(e){}
   showApp();
 }
 function showApp(){
@@ -280,7 +276,7 @@ function showApp(){
   document.getElementById('mainApp').style.display='block';
 }
 function changeKey(){
-  try{localStorage.removeItem('mia_api_key');}catch(e){}
+  try{localStorage.removeItem('mia_groq_key');}catch(e){}
   API_KEY='';
   document.getElementById('keyInput').value='';
   document.getElementById('keyErr').style.display='none';
@@ -377,43 +373,43 @@ function setBusy(on,msg){
   document.getElementById('fjBtn').disabled=on;
 }
 
+async function callGroq(prompt){
+  var res=await fetch(GROQ_URL,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':'Bearer '+API_KEY},
+    body:JSON.stringify({
+      model:GROQ_MODEL,
+      max_tokens:3000,
+      temperature:0.7,
+      messages:[
+        {role:'system',content:'Sei un esperto analista finanziario. Rispondi SEMPRE e SOLO con JSON valido, senza testo prima o dopo, senza markdown, senza backtick.'},
+        {role:'user',content:prompt}
+      ]
+    })
+  });
+  if(!res.ok){var et=await res.text();throw new Error('Groq '+res.status+': '+et.substring(0,200));}
+  var data=await res.json();
+  var txt=data.choices[0].message.content;
+  var clean=txt.replace(/```json|```/g,'').trim();
+  var m=clean.match(/\{[\s\S]*\}/);
+  if(!m)throw new Error('Formato risposta non valido. Riprova.');
+  return JSON.parse(m[0]);
+}
+
 async function fetchNews(silent){
-  setBusy(true,'🔍 Ricerca notizie in corso…');
+  setBusy(true,'🔍 Analisi notizie in corso…');
   if(!silent){document.getElementById('summaryBox').classList.remove('visible');allNews=[];document.getElementById('newsGrid').innerHTML='';}
   var q=document.getElementById('query').value.trim();
   var today=new Date().toLocaleDateString('it-IT');
-  var srcTxt=activeSrc!=='all'?'Priorità fonte: '+activeSrc+'. ':'';
-  var userMsg='Oggi è '+today+'. '+srcTxt+(q?'Focus su: '+q+'. ':'')+
-    'Elenca le 10 notizie finanziarie più importanti di oggi per i mercati (stock USA/EU, crypto BTC/ETH, macro Fed/BCE, earnings, commodity, forex). '+
-    'Per ogni notizia indica impatto su mercati. Rispondi SOLO con questo JSON (nessun testo prima o dopo):\n'+
-    '{"summary":"sintesi mercati oggi in 2-3 frasi","news":[{"id":"n1","title":"titolo","summary":"spiegazione impatto sui mercati","impact":"high","categories":["stock"],"assets":["SPY"],"source":"Bloomberg","url":"","time":"oggi"}]}\n'+
-    'impact deve essere: high, medium, o low. Includi 8-10 notizie.';
+  var srcTxt=activeSrc!=='all'?'Fonte preferita: '+activeSrc+'. ':'';
+  var prompt='Oggi è '+today+'. '+srcTxt+(q?'Focus su: '+q+'. ':'')+
+    'Genera un report delle 10 notizie finanziarie più importanti di oggi che impattano i mercati (stock USA/EU, crypto BTC/ETH/altcoin, macro Fed/BCE/inflazione, earnings aziendali, commodity petrolio/oro, forex EUR/USD). '+
+    'Basati sulla tua conoscenza dei mercati e degli eventi economici recenti. '+
+    'Rispondi SOLO con questo JSON:\n'+
+    '{"summary":"stato mercati oggi in 2-3 frasi concise","news":[{"id":"n1","title":"titolo notizia","summary":"spiegazione impatto mercati in 2 frasi","impact":"high","categories":["stock","crypto","macro","commodity","forex"],"assets":["BTC","SPY","EUR/USD"],"source":"Bloomberg","url":"","time":"oggi"}]}\n'+
+    'Valori impact: high=banche centrali/crolli>3%/geopolitica, medium=earnings/movimenti 1-3%, low=analisi/news minori. Genera 10 notizie con id n1-n10.';
   try{
-    var res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':API_KEY,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
-      body:JSON.stringify({
-        model:'claude-haiku-4-5-20251001',
-        max_tokens:3000,
-        messages:[{role:'user',content:userMsg}]
-      })
-    });
-    if(!res.ok){
-      var et=await res.text();
-      throw new Error('Errore '+res.status+' — '+et.substring(0,150));
-    }
-    var data=await res.json();
-    var txt='';
-    for(var i=0;i<data.content.length;i++){if(data.content[i].type==='text')txt+=data.content[i].text;}
-    var clean=txt.replace(/```json|```/g,'').trim();
-    var m=clean.match(/\{[\s\S]*\}/);
-    if(!m)throw new Error('Formato risposta non valido. Riprova.');
-    var parsed=JSON.parse(m[0]);
+    var parsed=await callGroq(prompt);
     var prevHigh=allNews.filter(function(n){return n.impact==='high';}).map(function(n){return n.id;});
     allNews=parsed.news||[];
     document.getElementById('lastUpdate').textContent='Aggiornato: '+new Date().toLocaleTimeString('it-IT');
@@ -432,34 +428,15 @@ async function fetchNews(silent){
 async function fetchFJ(fromPanel){
   var lb=fromPanel?'fjLbar':'lbar',sm=fromPanel?'fjSmsg':'smsg';
   document.getElementById(lb).classList.add('active');
-  document.getElementById(sm).textContent='📰 Recupero notizie FJ…';
+  document.getElementById(sm).textContent='📰 Generazione notizie FJ…';
   document.getElementById('mainBtn').disabled=true;document.getElementById('fjBtn').disabled=true;
   if(fromPanel)document.getElementById('fjRefBtn').disabled=true;
-  var userMsg='Elenca le ultime 10 notizie finanziarie in stile FinancialJuice (brevi, dirette, in italiano). '+
-    'Rispondi SOLO con JSON: {"items":[{"text":"testo notizia","time":"orario stimato","category":"Forex|Equity|Crypto|Macro"}]}';
+  var today=new Date().toLocaleDateString('it-IT');
+  var prompt='Oggi è '+today+'. Genera 12 notizie finanziarie brevi e dirette in stile FinancialJuice (flash news, max 2 righe ciascuna, in italiano). '+
+    'Copri forex, equity, crypto, macro. '+
+    'Rispondi SOLO con JSON: {"items":[{"text":"testo notizia breve","time":"HH:MM","category":"Forex|Equity|Crypto|Macro"}]}';
   try{
-    var res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':API_KEY,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
-      body:JSON.stringify({
-        model:'claude-haiku-4-5-20251001',
-        max_tokens:1500,
-        messages:[{role:'user',content:userMsg}]
-      })
-    });
-    if(!res.ok)throw new Error('Errore API '+res.status);
-    var data=await res.json();
-    var txt='';
-    for(var i=0;i<data.content.length;i++){if(data.content[i].type==='text')txt+=data.content[i].text;}
-    var clean=txt.replace(/```json|```/g,'').trim();
-    var m=clean.match(/\{[\s\S]*\}/);
-    if(!m)throw new Error('Formato non valido.');
-    var parsed=JSON.parse(m[0]);
+    var parsed=await callGroq(prompt);
     var items=parsed.items||[];
     document.getElementById('fjGrid').innerHTML=items.length
       ?items.map(function(it,i){return '<div class="fj-item" style="animation-delay:'+(i*.05)+'s"><div class="fj-text">'+it.text+'</div><div class="fj-meta">🕐 '+(it.time||'Recente')+(it.category?' · '+it.category:'')+'</div></div>';}).join('')
