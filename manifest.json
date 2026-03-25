@@ -1,0 +1,18 @@
+{
+  "name": "Market Intel Agent",
+  "short_name": "MIA",
+  "description": "Daily report notizie finanziarie in tempo reale",
+  "start_url": "/market-intel-agent/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#00ff88",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

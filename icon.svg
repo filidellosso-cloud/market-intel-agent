@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="100" fill="#0a0a0f"/>
+  <!-- Signal waves -->
+  <path d="M256 320 Q180 260 180 180 Q180 100 256 60 Q332 100 332 180 Q332 260 256 320Z" fill="none" stroke="#00ff88" stroke-width="8" opacity="0.15"/>
+  <!-- Antenna dish -->
+  <ellipse cx="256" cy="210" rx="90" ry="45" fill="none" stroke="#00ff88" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="256" cy="210" rx="60" ry="30" fill="none" stroke="#00ff88" stroke-width="6" opacity="0.5"/>
+  <ellipse cx="256" cy="210" rx="30" ry="15" fill="none" stroke="#00ff88" stroke-width="4" opacity="0.3"/>
+  <!-- Center dot -->
+  <circle cx="256" cy="210" r="10" fill="#00ff88"/>
+  <!-- Pole -->
+  <line x1="256" y1="255" x2="256" y2="360" stroke="#00ff88" stroke-width="10" stroke-linecap="round"/>
+  <!-- Base -->
+  <line x1="210" y1="360" x2="302" y2="360" stroke="#00ff88" stroke-width="10" stroke-linecap="round"/>
+  <line x1="220" y1="380" x2="292" y2="380" stroke="#00ff88" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+  <!-- Signal pulses -->
+  <path d="M180 160 Q200 130 256 120 Q312 130 332 160" fill="none" stroke="#00ff88" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M155 135 Q185 90 256 75 Q327 90 357 135" fill="none" stroke="#00ff88" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+  <!-- MIA text -->
+  <text x="256" y="450" text-anchor="middle" font-family="monospace" font-size="52" font-weight="bold" fill="#00ff88">MIA</text>
+  <text x="256" y="490" text-anchor="middle" font-family="monospace" font-size="24" fill="#6b6b80">MARKET INTEL</text>
+</svg>
